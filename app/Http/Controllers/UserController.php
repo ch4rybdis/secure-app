@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class UserController extends Controller
+use App\Http\Middleware\RoleMiddleware;
+class UserController extends \Illuminate\Routing\Controller
 {
     public function __construct()
     {

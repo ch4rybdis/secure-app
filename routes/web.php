@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index']); // there is intentionally missing middleware so admin page is reachable
 Route::get('/user', [UserController::class, 'index'])->middleware('role:user');
 
 require __DIR__.'/auth.php';
